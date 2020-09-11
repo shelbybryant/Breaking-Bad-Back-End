@@ -12,6 +12,10 @@ public class LoginService {
 	
 
 	public boolean login(LoginDTO loginDto) {
+		
+		log.info("Login Service login" + loginDto);
+		
+		
 	
 		return false;
 	}
