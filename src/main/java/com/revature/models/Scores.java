@@ -1,22 +1,28 @@
 package com.revature.models;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Scores")
-public class Scores {
+public class Scores implements Serializable{
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private static final long serialVersionUID = 1L;
+	
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="user_id", nullable=false)
 	private int userId;
-	@Column(name="char_id", unique = true, nullable = false)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="char_id", nullable=false)
 	private int cId;
 	@Column(name="score", unique = true, nullable = false)
 	private int score;
@@ -30,13 +36,6 @@ public class Scores {
 	public Scores(int userId, int cId, int score, Timestamp tStamp) {
 		super();
 		this.userId = userId;
-		this.cId = cId;
-		this.score = score;
-		this.tStamp = tStamp;
-	}
-
-	public Scores(int cId, int score, Timestamp tStamp) {
-		super();
 		this.cId = cId;
 		this.score = score;
 		this.tStamp = tStamp;

@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,13 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="users")
-public class Users {
+public class Users implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id", nullable=false)
 	public int userId;
-	@Column(name="screen_name")
+	@Column(name="screen_name", unique=true)
 	public String screenName;
 	@Column(name="email")
 	public String email;
