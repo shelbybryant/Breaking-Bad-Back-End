@@ -1,12 +1,17 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,91 +20,224 @@ public class Games implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	//shelby was wrong about the character id
+	//Rukiye was right about making it a game id, we do not need to track by character id
+	//shelby misunderstood how the api actually works and how to use it
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="char_id", nullable = false)
-	private int cId;//character id
-	@Column(name="char_name", unique = true, nullable = false)
-	private String cName;//character name
-	@Column(name="quote")
+	@Column(name="game_id", nullable = false)
+	private int gameId;//game id
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="user_id")
+	private int userId;
+	@Column(name="quotes")
 	private String quote;
-	@Column(name="fun_fact1")
-	private String funFact1;
-	@Column(name="fun_fact2")
-	private String funFact2;
+	@Column(name="alive_or_dead")
+	private boolean aliveOrDead;
+	@Column(name="seasons")
+	private boolean seasons;
+	@Column(name="death_count")
+	private boolean deathCount;
+	@Column(name="score")
+	private int score;
+	@Column(name="game_submitted")
+	private Date gameSubmitted;
+	
 	
 	public Games() {
 		super();
 	}
 
-	public Games(int cId, String cName, String quote, String funFact1, String funFact2) {
+	public Games(int gameId, int userId, String quote, boolean aliveOrDead, boolean seasons, boolean deathCount,
+			int score, Date gameSubmitted) {
 		super();
-		this.cId = cId;
-		this.cName = cName;
+		this.gameId = gameId;
+		this.userId = userId;
 		this.quote = quote;
-		this.funFact1 = funFact1;
-		this.funFact2 = funFact2;
+		this.aliveOrDead = aliveOrDead;
+		this.seasons = seasons;
+		this.deathCount = deathCount;
+		this.score = score;
+		this.gameSubmitted = gameSubmitted;
 	}
 
-	public Games(String cName, String quote, String funFact1, String funFact2) {
+
+	public Games(int userId, String quote, boolean aliveOrDead, boolean seasons, boolean deathCount, int score,
+			Date gameSubmitted) {
 		super();
-		this.cName = cName;
+		this.userId = userId;
 		this.quote = quote;
-		this.funFact1 = funFact1;
-		this.funFact2 = funFact2;
+		this.aliveOrDead = aliveOrDead;
+		this.seasons = seasons;
+		this.deathCount = deathCount;
+		this.score = score;
+		this.gameSubmitted = gameSubmitted;
 	}
 
-	public int getcId() {
-		return cId;
+
+
+
+	public Games(String quote, boolean aliveOrDead, boolean seasons, boolean deathCount, int score,
+			Date gameSubmitted) {
+		super();
+		this.quote = quote;
+		this.aliveOrDead = aliveOrDead;
+		this.seasons = seasons;
+		this.deathCount = deathCount;
+		this.score = score;
+		this.gameSubmitted = gameSubmitted;
 	}
 
-	public void setcId(int cId) {
-		this.cId = cId;
+
+
+
+	public int getGameId() {
+		return gameId;
 	}
 
-	public String getcName() {
-		return cName;
+
+
+
+	public void setGameId(int gameId) {
+		this.gameId = gameId;
 	}
 
-	public void setcName(String cName) {
-		this.cName = cName;
+
+
+
+	public int getUserId() {
+		return userId;
 	}
+
+
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+
+
 
 	public String getQuote() {
 		return quote;
 	}
 
+
+
+
 	public void setQuote(String quote) {
 		this.quote = quote;
 	}
 
-	public String getFunFact1() {
-		return funFact1;
+
+
+
+	public boolean isAliveOrDead() {
+		return aliveOrDead;
 	}
 
-	public void setFunFact1(String funFact1) {
-		this.funFact1 = funFact1;
+
+
+
+	public void setAliveOrDead(boolean aliveOrDead) {
+		this.aliveOrDead = aliveOrDead;
 	}
 
-	public String getFunFact2() {
-		return funFact2;
+
+
+
+	public boolean isSeasons() {
+		return seasons;
 	}
 
-	public void setFunFact2(String funFact2) {
-		this.funFact2 = funFact2;
+
+
+
+	public void setSeasons(boolean seasons) {
+		this.seasons = seasons;
 	}
+
+
+
+
+	public boolean isDeathCount() {
+		return deathCount;
+	}
+
+
+
+
+	public void setDeathCount(boolean deathCount) {
+		this.deathCount = deathCount;
+	}
+
+
+
+
+	public int getScore() {
+		return score;
+	}
+
+
+
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+
+
+
+	public Date getGameSubmitted() {
+		return gameSubmitted;
+	}
+
+
+
+
+	public void setGameSubmitted(Date gameSubmitted) {
+		this.gameSubmitted = gameSubmitted;
+	}
+
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Games [gameId=" + gameId + ", userId=" + userId + ", quote=" + quote + ", aliveOrDead=" + aliveOrDead
+				+ ", seasons=" + seasons + ", deathCount=" + deathCount + ", score=" + score + ", gameSubmitted="
+				+ gameSubmitted + "]";
+	}
+
+
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + cId;
-		result = prime * result + ((cName == null) ? 0 : cName.hashCode());
-		result = prime * result + ((funFact1 == null) ? 0 : funFact1.hashCode());
-		result = prime * result + ((funFact2 == null) ? 0 : funFact2.hashCode());
+		result = prime * result + (aliveOrDead ? 1231 : 1237);
+		result = prime * result + (deathCount ? 1231 : 1237);
+		result = prime * result + gameId;
+		result = prime * result + ((gameSubmitted == null) ? 0 : gameSubmitted.hashCode());
 		result = prime * result + ((quote == null) ? 0 : quote.hashCode());
+		result = prime * result + score;
+		result = prime * result + (seasons ? 1231 : 1237);
+		result = prime * result + userId;
 		return result;
 	}
+
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -110,34 +248,31 @@ public class Games implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Games other = (Games) obj;
-		if (cId != other.cId)
+		if (aliveOrDead != other.aliveOrDead)
 			return false;
-		if (cName == null) {
-			if (other.cName != null)
-				return false;
-		} else if (!cName.equals(other.cName))
+		if (deathCount != other.deathCount)
 			return false;
-		if (funFact1 == null) {
-			if (other.funFact1 != null)
-				return false;
-		} else if (!funFact1.equals(other.funFact1))
+		if (gameId != other.gameId)
 			return false;
-		if (funFact2 == null) {
-			if (other.funFact2 != null)
+		if (gameSubmitted == null) {
+			if (other.gameSubmitted != null)
 				return false;
-		} else if (!funFact2.equals(other.funFact2))
+		} else if (!gameSubmitted.equals(other.gameSubmitted))
 			return false;
 		if (quote == null) {
 			if (other.quote != null)
 				return false;
 		} else if (!quote.equals(other.quote))
 			return false;
+		if (score != other.score)
+			return false;
+		if (seasons != other.seasons)
+			return false;
+		if (userId != other.userId)
+			return false;
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Games [cId=" + cId + ", cName=" + cName + ", quote=" + quote + ", funFact1=" + funFact1 + ", funFact2="
-				+ funFact2 + "]";
-	}
+	
+
 }

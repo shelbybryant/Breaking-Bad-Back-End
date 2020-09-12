@@ -26,23 +26,31 @@ public class Users implements Serializable{
 	@Column(name="password")
 	public String password;
 	
+	//this is to help keep track of how many points a user has accumulated over games
+	//also for displaying top leader in leader board
+	@Column(name="running_total")
+	public int runningTotal;
+	
 	public Users() {
 		super();
 	}
 
-	public Users(int userId, String screenName, String email, String password) {
+	
+	public Users(int userId, String screenName, String email, String password, int runningTotal) {
 		super();
 		this.userId = userId;
 		this.screenName = screenName;
 		this.email = email;
 		this.password = password;
+		this.runningTotal = runningTotal;
 	}
 
-	public Users(String screenName, String email, String password) {
+	public Users(String screenName, String email, String password, int runningTotal) {
 		super();
 		this.screenName = screenName;
 		this.email = email;
 		this.password = password;
+		this.runningTotal = runningTotal;
 	}
 	
 	public int getUserId() {
