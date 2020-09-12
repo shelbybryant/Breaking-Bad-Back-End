@@ -2,11 +2,15 @@ package com.revature.models;
 
 import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,8 +19,11 @@ public class Scores {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="char_id", unique = true, nullable = false)
 	private int userId;
-	@Column(name="char_id", unique = true, nullable = false)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="char_id", unique = true, nullable = false)
 	private int cId;
 	@Column(name="score", unique = true, nullable = false)
 	private int score;
