@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class LoginDTO  {
+public class LoginDTO {
 	public String email;
 	public String password;
 	

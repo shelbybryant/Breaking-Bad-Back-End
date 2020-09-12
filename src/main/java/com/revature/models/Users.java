@@ -19,7 +19,7 @@ public class Users implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id", nullable=false)
 	public int userId;
-	@Column(name="screen_name")
+	@Column(name="screen_name", unique=true)
 	public String screenName;
 	@Column(name="email")
 	public String email;
