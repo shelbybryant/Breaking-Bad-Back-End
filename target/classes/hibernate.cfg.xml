@@ -12,11 +12,12 @@
 		<property name="hibernate.connection.password">password</property>
 		
 		<!-- WE WILL CHANGE THIS RDS LOCATION -->
-		<property name="hibernate.connection.url">jdbc:postgresql://javafs200803.cm9sjkiaoymd.us-east-2.rds.amazonaws.com/project1</property>    
+		<property name="hibernate.connection.url">jdbc:postgresql://javafs200803.cicoda1qunaq.us-east-2.rds.amazonaws.com:5432/postgres</property>    
 		
 		<!-- got it from ConnectionUtil.java -->
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>	
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.default_schema">project2</property>
 		
 		<!-- These will print the sql queries hibernate makes to the console and format them-->
 		<property name="hibernate.show_sql">true</property>
