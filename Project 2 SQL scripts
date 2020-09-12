@@ -1,0 +1,30 @@
+DROP TABLE IF EXISTS users CASCADE;
+
+CREATE TABLE users (
+	user_id SERIAL PRIMARY KEY,
+	screen_name VARCHAR UNIQUE,
+	email VARCHAR UNIQUE,
+	user_password VARCHAR,
+	running_total INTEGER
+);
+
+DROP TABLE IF EXISTS games;
+
+CREATE TABLE games (
+	game_id SERIAL PRIMARY KEY,
+	user_id_fk INTEGER REFERENCES users(user_id),
+	alive_or_dead BOOLEAN,
+	seasons BOOLEAN,
+	death_count BOOLEAN,
+	quotes BOOLEAN,
+	score INTEGER,
+	game_submitted DATE 
+);
+
+--put IN dummy info
+
+INSERT INTO users(user_id, screen_name, email, user_password, running_total)
+	VALUES (DEFAULT, 'shelbers', 'shelbers@gmail.com', 'password', 2);
+	
+INSERT INTO games (game_id, user_id_fk, alive_or_dead, seasons, death_count, quotes, score, game_submitted)
+	VALUES (DEFAULT, 1, TRUE, FALSE, FALSE, TRUE, 2, DEFAULT);
