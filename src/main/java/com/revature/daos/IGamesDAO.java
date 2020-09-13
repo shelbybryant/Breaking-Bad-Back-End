@@ -8,5 +8,11 @@ public interface IGamesDAO {
 
 	//this will get all games based on the user id
 	public List<Games> findByUserId(int userId);
+	public boolean addGame (Games games);
+	
+	//I don't know about the random quotes method because the api has functionality for that
+	/* And we don't need the quote by character because the api will also do that. Our QuotesDAO
+	 * will have the methodology for storing and then retrieving those saved quotes
+	 */
 	
 }

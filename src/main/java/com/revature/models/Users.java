@@ -25,13 +25,13 @@ public class Users implements Serializable{
 	public String email;
 	@Column(name="password")
 	public String password;
-	
 	//this is to help keep track of how many points a user has accumulated over games
 	//also for displaying top leader in leader board
 	@Column(name="running_total")
 	public int runningTotal;
 	@Column(name="games_total")
 	public int gamesTotal;
+	
 	
 	public Users() {
 		super();
