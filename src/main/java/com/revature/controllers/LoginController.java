@@ -21,10 +21,10 @@ public class LoginController {
 		LoginDTO loginDto = new LoginDTO();	
 		
 		// getting info from index.html
-		String userName = req.getParameter("login_username"); // just for placeholder for now
+		String email = req.getParameter("login_username"); // just for placeholder for now
 		String password = req.getParameter("login_pw");
 		
-		loginDto.username = userName;
+		loginDto.email = email;
 		loginDto.password = password;
 		
 		
@@ -41,7 +41,7 @@ public class LoginController {
 			session.invalidate();
 			
 			res.setStatus(200);
-			res.getWriter().println(loginDto.username + " has logged out successfully");
+			res.getWriter().println(loginDto.email + " has logged out successfully");
 			System.out.println("Login Controller logout - logged out success! " + loginDto);
 			
 		}else {
