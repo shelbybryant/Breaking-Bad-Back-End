@@ -12,5 +12,6 @@ public interface IUserDAO {
 	public List<Users> getTopThree(int userId);
 	public Users getRunningTotal(int userId);
 	public Users getGamesTotal(int userId);
+	//this is a test
 	
 }
