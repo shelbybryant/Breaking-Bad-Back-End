@@ -2,10 +2,11 @@ DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
 	user_id SERIAL PRIMARY KEY,
-	screen_name VARCHAR UNIQUE,
-	email VARCHAR UNIQUE,
-	user_password VARCHAR,
-	running_total INTEGER
+	screen_name VARCHAR(30) UNIQUE,
+	email VARCHAR(30) UNIQUE,
+	user_password VARCHAR(30),
+	running_total INTEGER,
+	games_total INTEGER
 );
 
 DROP TABLE IF EXISTS games;
@@ -13,18 +14,25 @@ DROP TABLE IF EXISTS games;
 CREATE TABLE games (
 	game_id SERIAL PRIMARY KEY,
 	user_id_fk INTEGER REFERENCES users(user_id),
-	alive_or_dead BOOLEAN,
-	seasons BOOLEAN,
-	death_count BOOLEAN,
-	quotes BOOLEAN,
 	score INTEGER,
 	game_submitted DATE 
 );
 
+DROP TABLE IF EXISTS quotes;
+
+CREATE TABLE quotes (
+	user_id_fk INTEGER REFERENCES users(user_id),
+	author_firstname VARCHAR(30),
+	author_lastname VARCHAR(30),
+	author_quote VARCHAR(100)
+);
 --put IN dummy info
 
-INSERT INTO users(user_id, screen_name, email, user_password, running_total)
-	VALUES (DEFAULT, 'shelbers', 'shelbers@gmail.com', 'password', 2);
+INSERT INTO users(user_id, screen_name, email, user_password, running_total, games_total)
+	VALUES (DEFAULT, 'shelbers', 'shelbers@gmail.com', 'password', 2, 1);
 	
-INSERT INTO games (game_id, user_id_fk, alive_or_dead, seasons, death_count, quotes, score, game_submitted)
-	VALUES (DEFAULT, 1, TRUE, FALSE, FALSE, TRUE, 2, DEFAULT);
+INSERT INTO games (game_id, user_id_fk, score, game_submitted)
+	VALUES (DEFAULT, 1, 2, DEFAULT);
+	
+INSERT INTO quotes(user_id_fk, author_firstname, author_lastname, author_quote)
+	VALUES (1, 'Jesse', 'Pinkman', 'Funyuns are awesome.')

@@ -31,14 +31,6 @@ public class Games implements Serializable {
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private int userId;
-	@Column(name="quotes")
-	private String quote;
-	@Column(name="alive_or_dead")
-	private boolean aliveOrDead;
-	@Column(name="seasons")
-	private boolean seasons;
-	@Column(name="death_count")
-	private boolean deathCount;
 	@Column(name="score")
 	private int score;
 	@Column(name="game_submitted")
@@ -49,47 +41,29 @@ public class Games implements Serializable {
 		super();
 	}
 
-	public Games(int gameId, int userId, String quote, boolean aliveOrDead, boolean seasons, boolean deathCount,
-			int score, Date gameSubmitted) {
+
+	public Games(int score, Date gameSubmitted) {
+		super();
+		this.score = score;
+		this.gameSubmitted = gameSubmitted;
+	}
+
+
+	public Games(int userId, int score, Date gameSubmitted) {
+		super();
+		this.userId = userId;
+		this.score = score;
+		this.gameSubmitted = gameSubmitted;
+	}
+
+
+	public Games(int gameId, int userId, int score, Date gameSubmitted) {
 		super();
 		this.gameId = gameId;
 		this.userId = userId;
-		this.quote = quote;
-		this.aliveOrDead = aliveOrDead;
-		this.seasons = seasons;
-		this.deathCount = deathCount;
 		this.score = score;
 		this.gameSubmitted = gameSubmitted;
 	}
-
-
-	public Games(int userId, String quote, boolean aliveOrDead, boolean seasons, boolean deathCount, int score,
-			Date gameSubmitted) {
-		super();
-		this.userId = userId;
-		this.quote = quote;
-		this.aliveOrDead = aliveOrDead;
-		this.seasons = seasons;
-		this.deathCount = deathCount;
-		this.score = score;
-		this.gameSubmitted = gameSubmitted;
-	}
-
-
-
-
-	public Games(String quote, boolean aliveOrDead, boolean seasons, boolean deathCount, int score,
-			Date gameSubmitted) {
-		super();
-		this.quote = quote;
-		this.aliveOrDead = aliveOrDead;
-		this.seasons = seasons;
-		this.deathCount = deathCount;
-		this.score = score;
-		this.gameSubmitted = gameSubmitted;
-	}
-
-
 
 
 	public int getGameId() {
@@ -97,13 +71,9 @@ public class Games implements Serializable {
 	}
 
 
-
-
 	public void setGameId(int gameId) {
 		this.gameId = gameId;
 	}
-
-
 
 
 	public int getUserId() {
@@ -111,69 +81,9 @@ public class Games implements Serializable {
 	}
 
 
-
-
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
-
-
-
-	public String getQuote() {
-		return quote;
-	}
-
-
-
-
-	public void setQuote(String quote) {
-		this.quote = quote;
-	}
-
-
-
-
-	public boolean isAliveOrDead() {
-		return aliveOrDead;
-	}
-
-
-
-
-	public void setAliveOrDead(boolean aliveOrDead) {
-		this.aliveOrDead = aliveOrDead;
-	}
-
-
-
-
-	public boolean isSeasons() {
-		return seasons;
-	}
-
-
-
-
-	public void setSeasons(boolean seasons) {
-		this.seasons = seasons;
-	}
-
-
-
-
-	public boolean isDeathCount() {
-		return deathCount;
-	}
-
-
-
-
-	public void setDeathCount(boolean deathCount) {
-		this.deathCount = deathCount;
-	}
-
-
 
 
 	public int getScore() {
@@ -181,13 +91,9 @@ public class Games implements Serializable {
 	}
 
 
-
-
 	public void setScore(int score) {
 		this.score = score;
 	}
-
-
 
 
 	public Date getGameSubmitted() {
@@ -195,13 +101,9 @@ public class Games implements Serializable {
 	}
 
 
-
-
 	public void setGameSubmitted(Date gameSubmitted) {
 		this.gameSubmitted = gameSubmitted;
 	}
-
-
 
 
 	public static long getSerialversionuid() {
@@ -209,34 +111,23 @@ public class Games implements Serializable {
 	}
 
 
-
-
 	@Override
 	public String toString() {
-		return "Games [gameId=" + gameId + ", userId=" + userId + ", quote=" + quote + ", aliveOrDead=" + aliveOrDead
-				+ ", seasons=" + seasons + ", deathCount=" + deathCount + ", score=" + score + ", gameSubmitted="
+		return "Games [gameId=" + gameId + ", userId=" + userId + ", score=" + score + ", gameSubmitted="
 				+ gameSubmitted + "]";
 	}
-
-
 
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (aliveOrDead ? 1231 : 1237);
-		result = prime * result + (deathCount ? 1231 : 1237);
 		result = prime * result + gameId;
 		result = prime * result + ((gameSubmitted == null) ? 0 : gameSubmitted.hashCode());
-		result = prime * result + ((quote == null) ? 0 : quote.hashCode());
 		result = prime * result + score;
-		result = prime * result + (seasons ? 1231 : 1237);
 		result = prime * result + userId;
 		return result;
 	}
-
-
 
 
 	@Override
@@ -248,10 +139,6 @@ public class Games implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Games other = (Games) obj;
-		if (aliveOrDead != other.aliveOrDead)
-			return false;
-		if (deathCount != other.deathCount)
-			return false;
 		if (gameId != other.gameId)
 			return false;
 		if (gameSubmitted == null) {
@@ -259,19 +146,14 @@ public class Games implements Serializable {
 				return false;
 		} else if (!gameSubmitted.equals(other.gameSubmitted))
 			return false;
-		if (quote == null) {
-			if (other.quote != null)
-				return false;
-		} else if (!quote.equals(other.quote))
-			return false;
 		if (score != other.score)
-			return false;
-		if (seasons != other.seasons)
 			return false;
 		if (userId != other.userId)
 			return false;
 		return true;
 	}
+
+
 
 	
 
