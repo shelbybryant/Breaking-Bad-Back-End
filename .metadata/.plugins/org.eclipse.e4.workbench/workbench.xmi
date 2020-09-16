@@ -353,7 +353,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_j7SFEPRoEeqNep59UvSMcA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_j7aA4PRoEeqNep59UvSMcA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_jbKapvRoEeqNep59UvSMcA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_woNr0Pe3EeqoGMwhbYV-2w" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_jbKapvRoEeqNep59UvSMcA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_j7SFEfRoEeqNep59UvSMcA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -381,7 +381,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_j7SsIvRoEeqNep59UvSMcA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_j7b2EPRoEeqNep59UvSMcA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_jbJMmvRoEeqNep59UvSMcA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_woSkUPe3EeqoGMwhbYV-2w" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_jbJMmvRoEeqNep59UvSMcA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_j7SsI_RoEeqNep59UvSMcA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -566,9 +566,6 @@
     <bindings xmi:id="_jb1I9_RoEeqNep59UvSMcA" keySequence="F4" command="_jbAplvRoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jb1I_PRoEeqNep59UvSMcA" keySequence="F5" command="_jbE7A_RoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jb1I__RoEeqNep59UvSMcA" keySequence="COMMAND+F6" command="_jbB3wvRoEeqNep59UvSMcA"/>
-    <bindings xmi:id="_jb1wB_RoEeqNep59UvSMcA" keySequence="CTRL+SHIFT+F11" command="_jbGwQvRoEeqNep59UvSMcA">
-      <tags>platform:cocoa</tags>
-    </bindings>
     <bindings xmi:id="_jb1wCfRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+X O" command="_jbH-ZfRoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
@@ -692,34 +689,25 @@
     <bindings xmi:id="_jcB9S_RoEeqNep59UvSMcA" keySequence="COMMAND+F" command="_jbB3t_RoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcB9TvRoEeqNep59UvSMcA" keySequence="COMMAND+G" command="_ja-0Z_RoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcB9UPRoEeqNep59UvSMcA" keySequence="COMMAND+=" command="_jbEUDfRoEeqNep59UvSMcA"/>
-    <bindings xmi:id="_jcCkUPRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E E" command="_jbBQqPRoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcCkUfRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D E" command="_jbMPy_RoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_jcCkUvRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E G" command="_jbET_PRoEeqNep59UvSMcA"/>
-    <bindings xmi:id="_jcCkVfRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E J" command="_jbACj_RoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcCkWPRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D A" command="_jbKakPRoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_jcCkWfRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E S" command="_jbFiKvRoEeqNep59UvSMcA"/>
-    <bindings xmi:id="_jcCkWvRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E T" command="_jbBQoPRoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcCkW_RoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D T" command="_ja_bevRoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
     <bindings xmi:id="_jcCkXPRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D J" command="_jbJMkfRoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_jcCkXvRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E L" command="_jbAClvRoEeqNep59UvSMcA"/>
-    <bindings xmi:id="_jcCkX_RoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E N" command="_jbLo5PRoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcCkYvRoEeqNep59UvSMcA" keySequence="ALT+CR" command="_jbJzjfRoEeqNep59UvSMcA"/>
-    <bindings xmi:id="_jcCkY_RoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E P" command="_ja-0ZPRoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcCkZPRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D O" command="_jbGwW_RoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
     <bindings xmi:id="_jcDLYPRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D P" command="_jbKaovRoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_jcDLYfRoEeqNep59UvSMcA" keySequence="ALT+SHIFT+E R" command="_jbDF2_RoEeqNep59UvSMcA"/>
     <bindings xmi:id="_jcDLYvRoEeqNep59UvSMcA" keySequence="ALT+COMMAND+CTRL+D Q" command="_jbGJI_RoEeqNep59UvSMcA">
       <tags>platform:cocoa</tags>
     </bindings>
@@ -1138,7 +1126,7 @@
     <bindings xmi:id="_jcDLZPRoEeqNep59UvSMcA" keySequence="COMMAND+CR" command="_jbAppPRoEeqNep59UvSMcA"/>
   </bindingTables>
   <bindingTables xmi:id="_jcyyRPRoEeqNep59UvSMcA" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_jaXwbPRoEeqNep59UvSMcA">
-    <bindings xmi:id="_jcyyRfRoEeqNep59UvSMcA" keySequence="M1+W" command="_jcyyQvRoEeqNep59UvSMcA">
+    <bindings xmi:id="_wFCGQPe3EeqoGMwhbYV-2w" keySequence="M1+W" command="_jcyyQvRoEeqNep59UvSMcA">
       <tags>deleted</tags>
     </bindings>
   </bindingTables>
@@ -1743,42 +1731,6 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.springframework.tooling.ls.eclipse.gotosymbol"/>
     <tags>View</tags>
     <tags>categoryTag:Other</tags>
-  </descriptors>
-  <descriptors xmi:id="_j5DQcPRoEeqNep59UvSMcA" elementId="org.eclipse.eclemma.ui.CoverageView" label="Coverage" iconURI="platform:/plugin/org.eclipse.eclemma.ui/icons/full/eview16/coverage.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.eclemma.internal.ui.coverageview.CoverageView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.eclemma.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:Java</tags>
-  </descriptors>
-  <descriptors xmi:id="_j5D3gPRoEeqNep59UvSMcA" elementId="org.sonarlint.eclipse.ui.views.issues.IssuesView" label="SonarLint On-The-Fly" iconURI="platform:/plugin/org.sonarlint.eclipse.ui/icons/full/eview16/onthefly.png" tooltip="" category="SonarLint" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="org.sonarlint.eclipse.ui.internal.views.issues.OnTheFlyIssuesView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="org.sonarlint.eclipse.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:SonarLint</tags>
-  </descriptors>
-  <descriptors xmi:id="_j5EekPRoEeqNep59UvSMcA" elementId="org.sonarlint.eclipse.ui.views.issues.ChangeSetIssuesView" label="SonarLint Report" iconURI="platform:/plugin/org.sonarlint.eclipse.ui/icons/full/eview16/report.png" tooltip="" category="SonarLint" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="org.sonarlint.eclipse.ui.internal.views.issues.SonarLintReportView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="org.sonarlint.eclipse.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:SonarLint</tags>
-  </descriptors>
-  <descriptors xmi:id="_j5EekfRoEeqNep59UvSMcA" elementId="org.sonarlint.eclipse.ui.views.RuleDescriptionWebView" label="SonarLint Rule Description" iconURI="platform:/plugin/org.sonarlint.eclipse.ui/icons/full/eview16/rule.png" tooltip="" category="SonarLint" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="org.sonarlint.eclipse.ui.internal.views.RuleDescriptionWebView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="org.sonarlint.eclipse.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:SonarLint</tags>
-  </descriptors>
-  <descriptors xmi:id="_j5FFoPRoEeqNep59UvSMcA" elementId="org.sonarlint.eclipse.ui.views.IssueLocationsView" label="SonarLint Issue Locations" iconURI="platform:/plugin/org.sonarlint.eclipse.ui/icons/full/eview16/locations.png" tooltip="" category="SonarLint" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="org.sonarlint.eclipse.ui.internal.views.locations.IssueLocationsView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="org.sonarlint.eclipse.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:SonarLint</tags>
-  </descriptors>
-  <descriptors xmi:id="_j5FFofRoEeqNep59UvSMcA" elementId="org.sonarlint.eclipse.ui.ServersView" label="SonarLint Bindings" iconURI="platform:/plugin/org.sonarlint.eclipse.ui/icons/full/eview16/bindings.png" tooltip="" category="SonarLint" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
-    <persistedState key="originalCompatibilityViewClass" value="org.sonarlint.eclipse.ui.internal.binding.BindingsView"/>
-    <persistedState key="originalCompatibilityViewBundle" value="org.sonarlint.eclipse.ui"/>
-    <tags>View</tags>
-    <tags>categoryTag:SonarLint</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -2967,7 +2919,7 @@
   <addons xmi:id="_jaXwdfRoEeqNep59UvSMcA" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_jaXwdvRoEeqNep59UvSMcA" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_jafsMPRoEeqNep59UvSMcA" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_wEprwfe3EeqoGMwhbYV-2w" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <addons xmi:id="_jcxkIPRoEeqNep59UvSMcA" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler"/>
   <categories xmi:id="_ja8YIPRoEeqNep59UvSMcA" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>

@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/sheri/Desktop/projects"/>
+			<item value="/Users/sheri/Desktop/projects/Breaking-Bad-Back-End"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
