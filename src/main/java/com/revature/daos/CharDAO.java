@@ -1,5 +1,14 @@
 package com.revature.daos;
 
-public class CharDAO {
+import java.util.List;
+
+import com.revature.models.Quotes;
+
+public class CharDAO implements ICharDAO {
+
+	@Override
+	public List<Quotes> getQuoteByCharId(int charId) {
+		return null;
+	}
 
 }
