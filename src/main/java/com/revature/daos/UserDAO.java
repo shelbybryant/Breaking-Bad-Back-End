@@ -2,12 +2,18 @@ package com.revature.daos;
 
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.revature.models.Users;
+
+//  SessionFactory $ Session not recognized - need to check dependencies 
 
 @Repository
 @Transactional
@@ -23,42 +29,57 @@ public class UserDAO implements IUserDAO {
 
 	@Override
 	public List<Users> findAllUser() {
-		return null;
+		Session ses = sf.getCurrentSession();
+		CriteriaQuery<Users> cq = ses.getCriteriaBuilder(createQuery(Users.class))
+		cq.from(Users.class);
+		return ses.createQuery(cq).getResultList();
 	}
 	
 	@Override
-	public boolean getScreenNameById(int userId) {
-		return false;
+	public void getScreenNameById(int userId) {
+		Session ses = sf.getCurrentSession();
+		ses.get(Users.class, userId);
 	}
 
 	@Override
-	public boolean getAvatarById(byte avatar) {
-		return false;
+	public void getAvatarById(byte avatar) {
+		Session ses = sf.getCurrentSession();
+		ses.get(Users.class, avatar);
+		
 	}
 
 	@Override
-	public boolean addUser(Users users) {
-		return false;
+	public void addUser(Users users) {
+		Session ses = sf.getCurrentSession();
+		ses.save(users);
 	}
 
 	@Override
-	public boolean updateUser(Users users) {
-		return false;
+	public void updateUser(Users users) {
+		Session ses = sf.getCurrentSession();
+		ses.merge(users);
 	}
 
 	@Override
 	public List<Users> getTopThree() {
-		return null;
+		Session ses = sf.getCurrentSession();
+		CriteriaQuery<Users> q = ses.getCriteriaBuilder(createQuery(Users.class))
+		Root<Users> c = q.from(Users.class);
+		q.select(c);
+		return q.orderBy(ses.desc(c.get("running_total")));
+		//need to grab top 3
 	}
 
 	@Override
 	public Users getRunningTotal(int userId) {
-		return null;
+		Session ses = sf.getCurrentSession();
+		return ses.get(Users.class, userId);
 	}
 
 	@Override
 	public Users getGamesTotal(int userId) {
-		return null;
+		Session ses = sf.getCurrentSession();
+		return ses.get(Users.class, userId);
 	}
 
 }

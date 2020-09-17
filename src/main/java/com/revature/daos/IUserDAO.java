@@ -6,10 +6,10 @@ import com.revature.models.Users;
 
 public interface IUserDAO {
 	public List<Users> findAllUser();
-	public boolean getScreenNameById(int userId);
-	public boolean getAvatarById(byte avatar);
-	public boolean addUser(Users users);
-	public boolean updateUser(Users users);
+	public void getScreenNameById(int userId);
+	public void getAvatarById(byte avatar);
+	public void addUser(Users users);
+	public void updateUser(Users users);
 	//to pull top three running totals
 	public List<Users> getTopThree();
 	public Users getRunningTotal(int userId);
