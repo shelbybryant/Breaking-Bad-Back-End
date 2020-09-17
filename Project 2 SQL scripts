@@ -21,6 +21,7 @@ CREATE TABLE games (
 DROP TABLE IF EXISTS quotes;
 
 CREATE TABLE quotes (
+	quote_id SERIAL PRIMARY KEY,
 	user_id_fk INTEGER REFERENCES users(user_id),
 	author_firstname VARCHAR(30),
 	author_lastname VARCHAR(30),
@@ -34,5 +35,5 @@ INSERT INTO users(user_id, screen_name, email, user_password, running_total, gam
 INSERT INTO games (game_id, user_id_fk, score, game_submitted)
 	VALUES (DEFAULT, 1, 2, DEFAULT);
 	
-INSERT INTO quotes(user_id_fk, author_firstname, author_lastname, author_quote)
-	VALUES (1, 'Jesse', 'Pinkman', 'Funyuns are awesome.')
+INSERT INTO quotes(quote_id, user_id_fk, author_firstname, author_lastname, author_quote)
+	VALUES (DEFAULT, 1, 'Jesse', 'Pinkman', 'Funyuns are awesome.')
