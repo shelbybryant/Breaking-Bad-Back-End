@@ -2,18 +2,27 @@ package com.revature.daos;
 
 import java.util.List;
 
-import com.revature.models.Quotes;
+import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Repository;
+
+import com.revature.models.Quotes;
+import com.revature.models.Users;
+
+@Repository
+@Transactional
 public class QuotesDAO implements IQuotesDAO{
 
 	@Override
 	public List<Quotes> findByUserId(int userId) {
-		return null;
+		Session ses = sf.getCurrentSession();
+		return ses.get(Users.class, userId);
 	}
 
 	@Override
-	public boolean saveQuote(Quotes quote) {
-		return false;
+	public void saveQuote(Quotes quote) {
+		Session ses = sf.getCurrentSession();
+		ses.merge(quote);
 	}
 
 }
