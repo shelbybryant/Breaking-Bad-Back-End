@@ -20,10 +20,6 @@ public class Games implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	//shelby was wrong about the character id
-	//Rukiye was right about making it a game id, we do not need to track by character id
-	//shelby misunderstood how the api actually works and how to use it
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="game_id", nullable = false)

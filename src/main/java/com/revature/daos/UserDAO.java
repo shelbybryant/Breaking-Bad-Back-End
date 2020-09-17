@@ -16,37 +16,41 @@ public class UserDAO implements IUserDAO {
 
 	@Override
 	public List<Users> findAllUser() {
-		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public boolean getScreenNameById(int userId) {
+		return false;
+	}
+
+	@Override
+	public boolean getAvatarById(byte avatar) {
+		return false;
 	}
 
 	@Override
 	public boolean addUser(Users users) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean updateUser(Users users) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public List<Users> getTopThree(int userId) {
-		// TODO Auto-generated method stub
+	public List<Users> getTopThree() {
 		return null;
 	}
 
 	@Override
 	public Users getRunningTotal(int userId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Users getGamesTotal(int userId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
