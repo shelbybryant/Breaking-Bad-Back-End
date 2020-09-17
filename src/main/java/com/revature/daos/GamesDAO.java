@@ -3,6 +3,8 @@ package com.revature.daos;
 import java.util.List;
 
 import javax.transaction.Transactional;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,10 +17,11 @@ public class GamesDAO implements IGamesDAO{
 	
 	SessionFactory sf;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Games> findByUserId(int userId) {
 		Session ses = sf.getCurrentSession();
-		return ses.get(Users.class, userId);
+		return (List<Games>) ses.get(Users.class, userId);
 	}
 
 	@Override
