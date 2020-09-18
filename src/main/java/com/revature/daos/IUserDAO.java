@@ -8,11 +8,11 @@ public interface IUserDAO {
 	public List<Users> findAllUser();
 	public boolean getScreenNameById(int userId);
 	public boolean getAvatarById(byte avatar);
-	public boolean addUser(Users users);
-	public boolean updateUser(Users users);
-	//to pull top three running totals
-	public List<Users> getTopThree();
+	public void addUser(Users users);
+	public void updateUser(Users users);
+	public List<Users> getTopThree(); //to pull top three running totals
 	public Users getRunningTotal(int userId);
 	public Users getGamesTotal(int userId);
+	public Users getEmail(String email);
 	
 }

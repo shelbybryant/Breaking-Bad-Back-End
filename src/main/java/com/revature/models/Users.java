@@ -64,6 +64,14 @@ public class Users implements Serializable{
 	}
 
 
+	public Users(String screenName, String email, String password) {
+		super();
+		this.screenName = screenName;
+		this.email = email;
+		this.password = password;
+	}
+
+
 	public int getUserId() {
 		return userId;
 	}
